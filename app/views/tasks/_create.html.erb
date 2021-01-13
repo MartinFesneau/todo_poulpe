@@ -1,8 +1,0 @@
-<div>
-  <%= simple_form_for(@task) do |f| %>
-    <%= f.input :description, label: "Task description" %>
-    <%= f.input :deadline, label: "Deadline", as: :date, html5: true %>
-    <%= f.input :priority, label: "Priority (1: Very important, 5: Less important)", collection: [1, 2, 3, 4, 5] %>
-    <%= f.submit class: "btn btn-primary" %>
-  <% end %>
-</div>

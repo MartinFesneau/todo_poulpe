@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:edit, :update, :show, :destroy]
+  before_action :set_task, only: [:edit, :update, :show, :destroy, :change_status]
 
   def show
     authorize @task
@@ -57,10 +57,15 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  def change_task_status
+    @task.done = !@task.done
+    @task.save
+  end
+
   private 
 
   def task_params
-    params.require(:task).permit(:description, :deadline, :priority, :done)
+    params.require(:task).permit(:id, :description, :deadline, :priority, :done)
   end
 
   def set_task

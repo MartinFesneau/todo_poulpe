@@ -1,20 +1,27 @@
-<div class="task-card">
+<div class="task-card" id="task-<%= task.id %>" data-id="<%= task.id %>">
   <div class="main-content">
     <div class="cont-left">
-      <p><%= task.description %></p>
+    <div class="task-status">
+      <% if task.done %>
+        <i class="fas fa-check-circle done"></i>
+      <% else %>
+        <i class="fas fa-check-circle"></i>
+      <% end %>
+    </div>
+      <p class="strong"><%= task.description %></p>
       <p>Priority: <%= task.priority %></p>
     </div>
     <div class="cont-right">
       <div class="deadline">
-        <i class="far fa-clock"></i> <%= format_deadline(task.deadline) %>
+        <i class="far fa-clock"></i> <span class="small"><%= format_deadline(task.deadline) %></span>
       </div>
       <div class="actions">
         <div class="comment-icon">
           <i class="fas fa-comment-alt"></i> <%= task.comments.size %>
         </div>
-        <div class="edit-task">
+        <%# <div class="edit-task">
           <i class="fas fa-pen"></i>
-        </div>
+        </div> %>
         <div class="delete">
         <%= link_to task_path(task),
                   method: :delete,
@@ -26,13 +33,14 @@
       </div>
     </div>
   </div>
-  <div class="comment-cont">
+  <div class="comments-cont d-none">
     <div class="comments">
       <% task.comments.each do |comment| %>
-        <p><%= comment.content %></p>
+        <%= render "comments/comment", comment: comment %>
       <% end %>
+    <div class="comments-form ">
+      <%= render "comments/comment_form", task: task, comment: Comment.new %>
     </div>
-    <div class="comments-form">
     </div>
   </div>
 </div>

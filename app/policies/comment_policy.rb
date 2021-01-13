@@ -10,6 +10,6 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.task.project.user == user
+    record.task.user == user
   end
 end

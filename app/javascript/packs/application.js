@@ -24,7 +24,9 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { showNew } from "../components/show_new.js"
+import { showNew } from "../components/show_new_task_form.js"
+import { showCommentForm } from "../components/show_new_comment_form"
+import { changeStatus } from "../components/change_status"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -33,4 +35,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   showNew();
+  showCommentForm();
+  changeStatus();
 });

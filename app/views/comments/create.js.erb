@@ -1,0 +1,7 @@
+function addComment(commentHTML) {
+  const commentsCont = document.querySelector('.comments');
+  commentsCont.insertAdjacentHTML('afterbegin', commentHTML);
+}
+
+addComment('<%= j render "comments/comment", comment: @comment %>');
+

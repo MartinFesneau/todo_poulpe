@@ -1,0 +1,6 @@
+<div class="comment-form">
+  <%= simple_form_for([task, comment], remote: true) do |f| %>
+    <%= f.input :content, label: "Add a new comment" %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>
