@@ -10,14 +10,14 @@ class TaskPolicy < ApplicationPolicy
   end
 
   def show?
-    record.project.user == user
+    record.user == user
   end
 
   def update?
-    record.project.user == user
+    record.user == user
   end
 
   def destroy?
-    record.project.user == user
+    record.user == user
   end
 end

@@ -1,0 +1,30 @@
+.task-card {
+  background-color: $primary-background;
+    border: 1px solid $light-gray;
+    border-radius: 8px;
+    padding-left: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+
+    .main-content {
+      margin: 8px;
+      display: flex;
+      justify-content: space-between;
+
+      .cont-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        .actions {
+          display: flex;
+          justify-content: space-evenly;
+        }
+      }
+    }
+
+
+
+
+}

@@ -1,0 +1,14 @@
+<div class="form-group">
+  <%= simple_form_for(Task.new, remote: true) do |f| %>
+    <%= f.input :description, label: "Task description", class:"form-control" %>
+    <div class="form-row">
+      <div class="col">
+        <%= f.input :deadline, label: "Deadline", as: :date, html5: true, class:"form-control" %>
+      </div>
+      <div class="col">
+        <%= f.input :priority, label: "Priority (1: Very important, 5: Less important)", collection: [1, 2, 3, 4, 5], class:"form-control" %>
+      </div>
+    </div>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+</div>
