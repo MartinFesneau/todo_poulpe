@@ -1,11 +1,11 @@
-<div class="task-card" id="task-<%= task.id %>" data-id="<%= task.id %>">
+<div class="task-card" id="task-<%= task.id %>" >
   <div class="main-content">
     <div class="cont-left">
     <div class="task-status">
       <% if task.done %>
-        <i class="fas fa-check-circle done"></i>
+        <i class="fas fa-check-circle done" data-id="<%= task.id %>"></i>
       <% else %>
-        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-check-circle" data-id="<%= task.id %>"></i>
       <% end %>
     </div>
       <p class="strong"><%= task.description %></p>

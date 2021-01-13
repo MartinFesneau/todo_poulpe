@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:edit, :update, :show, :destroy, :change_status]
+  before_action :set_task, only: [:edit, :update, :show, :destroy]
 
   def show
     authorize @task
@@ -7,7 +7,7 @@ class TasksController < ApplicationController
 
   def index
     # @tasks = Task.where(user: current_user).order(priority: :desc)
-    @tasks = policy_scope(Task).order(priority: :desc)
+    @tasks = policy_scope(Task).order(priority: :asc)
   end
 
   # def new
@@ -58,6 +58,8 @@ class TasksController < ApplicationController
   end
 
   def change_task_status
+    @task = Task.find(params[:id].to_i)
+    authorize @task
     @task.done = !@task.done
     @task.save
   end

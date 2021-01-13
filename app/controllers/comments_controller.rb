@@ -26,10 +26,10 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.delete
     authorize @comment
-    respond_to do |format|
-      format.html { redirect_to root_path }
-      format.js
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to root_path }
+    #   format.js
+    # end
   end
 
   private 

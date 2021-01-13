@@ -20,4 +20,8 @@ class TaskPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def change_task_status?
+    record.user = user
+  end
 end

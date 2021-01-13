@@ -1,5 +1,5 @@
 const showCommentForm = () => {
-  const taskCards = document.querySelectorAll(".task-card")
+  const taskCards = document.querySelectorAll(".task-card");
 
   taskCards.forEach((container) => {
     const commentBtn = container.querySelector(".fa-comment-alt");
