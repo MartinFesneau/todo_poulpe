@@ -1,16 +1,16 @@
-<div class="form-group">
+<div class="form-group card">
   <%= simple_form_for(Task.new, remote: true) do |f| %>
     <%= f.input :description, label: "Task description", class:"form-control" %>
     <div class="form-row">
       <div class="col">
-        <%= f.input :deadline, label: "Deadline", as: :date, html5: true, min: Date.today, class:"form-control" %>
+        <%= f.input :deadline, label: "Deadline", as: :date, html5: true, class:"form-control" %>
       </div>
       <div class="col">
         <%= f.input :priority, as: :radio_buttons, label: "Priority (1: High, 2: Medium, 3: Low)", collection: [1, 2, 3], class:"form-control", wrapper: :vertical_collection_inline %>
       </div>
     </div>
     <div class="col">
-    <%= f.submit class: "btn btn-outline-primary" %>
+    <%= f.submit class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>

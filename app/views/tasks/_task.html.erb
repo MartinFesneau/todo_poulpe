@@ -1,4 +1,4 @@
-<div class="task-card" id="task-<%= task.id %>" >
+<div class="task-card card" id="task-<%= task.id %>" >
   <div class="main-content">
     <div class="cont-left">
       <div class="task-status">
@@ -19,9 +19,6 @@
         <div class="comment-icon">
           <i class="fas fa-comment-alt"></i> <%= task.comments.size %>
         </div>
-        <%# <div class="edit-task">
-          <i class="fas fa-pen"></i>
-        </div> %>
         <div class="delete">
         <%= link_to task_path(task),
                   method: :delete,

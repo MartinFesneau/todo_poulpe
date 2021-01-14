@@ -1,11 +1,4 @@
-.task-card {
-  background-color: $primary-background;
-    border: 1px solid $light-gray;
-    border-radius: 8px;
-    padding-left: 8px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-
+.card {
     
     .main-content {
       margin: 8px;
@@ -44,15 +37,6 @@
         }
       }
     }
-
-
-.done {
-  color: $green;
-}
-
-.in-progress {
-  color: $red;
-}
 
 .comments {
   padding: 16px;
