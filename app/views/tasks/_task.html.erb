@@ -33,9 +33,6 @@
   <div class="comments-cont d-none">
   <hr>
     <div class="comments">
-      <% if task.comments.empty? %>
-        <p class="small">No comments yet</p>
-      <% end %>
       <% task.comments.each do |comment| %>
         <%= render "comments/comment", comment: comment %>
       <% end %>
@@ -44,5 +41,6 @@
       <%= render "comments/comment_form", task: task, comment: Comment.new %>
     </div>
   </div>
+  <i class="fas fa-sort-down text-center"></i>
 </div>
 
