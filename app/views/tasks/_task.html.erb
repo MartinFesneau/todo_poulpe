@@ -13,7 +13,7 @@
     </div>
     <div class="cont-right">
       <div class="deadline">
-        <i class="far fa-clock"></i> <span class="small"><%= format_date(task.deadline) %></span>
+        <i class="far fa-clock "></i> <span class="small <%= "priority-1" if task.deadline == Date.today %> "><%= format_date(task.deadline) %></span>
       </div>
       <div class="actions">
         <div class="comment-icon">

@@ -1,4 +1,5 @@
 <div class="form-group card">
+<i class="fas fa-times text-right"></i>
   <%= simple_form_for(Task.new, remote: true) do |f| %>
   <div class="">
     <%= f.input :description, label: "Task description", class:"form-control" %>

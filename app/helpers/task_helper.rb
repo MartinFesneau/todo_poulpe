@@ -14,4 +14,8 @@ module TaskHelper
         "Low"
     end
   end
+
+  def tasks_due_today
+    return Task.where(deadline: Date.today, done: false).size
+  end
 end
