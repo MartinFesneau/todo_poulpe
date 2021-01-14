@@ -1,6 +1,9 @@
 <div>
-  <%= simple_form_for([task, comment], remote: true, html: { class: "form-inline ml-2"}) do |f| %>
-    <%= f.input :content, class:"form-control-sm", label: false, placeholder: "Add a new comment" %>
+  <%= simple_form_for([task, comment], remote: true, html: { class: "form-group"}) do |f| %>
+    <%= f.input :content, class:"form-group", label: false, placeholder: "Add a new comment" %>
+    <div class="custom-file">
+      <%= f.input :file, class: "custom-file-input", label: false %>
+    </div>
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
 </div>

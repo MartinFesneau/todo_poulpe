@@ -1,5 +1,8 @@
 <div class="comment" id="comment-<%= comment.id %>">
   <p class="small"><%= comment.content %></p>
+  <% if comment.file.attached? %>
+    <%= link_to "<i class='fas fa-paperclip'></i>", url_for(comment.file) %>
+  <% end %>
   <div class="comment-date">
     <p class="small"><%= format_date(comment.created_at) %></p>
     <%= link_to comment_path(comment),
