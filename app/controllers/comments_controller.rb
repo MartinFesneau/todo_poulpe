@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     authorize @comment
     if @comment.save
       respond_to do |format|
-        format.html { redirect_to tasks_path }
+        format.html { redirect_to tasks_path(@comment.task_id) }
         format.js
       end
     else
@@ -26,10 +26,10 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.delete
     authorize @comment
-    # respond_to do |format|
-    #   format.html { redirect_to root_path }
-    #   format.js
-    # end
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
   end
 
   private 

@@ -42,9 +42,9 @@
       <% task.comments.each do |comment| %>
         <%= render "comments/comment", comment: comment %>
       <% end %>
-    <div class="comments-form ">
-      <%= render "comments/comment_form", task: task, comment: Comment.new %>
     </div>
+    <div class="comments-form">
+      <%= render "comments/comment_form", task: task, comment: Comment.new %>
     </div>
   </div>
 </div>

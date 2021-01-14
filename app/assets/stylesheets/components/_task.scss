@@ -6,7 +6,7 @@
     margin-top: 16px;
     margin-bottom: 16px;
 
-
+    
     .main-content {
       margin: 8px;
       display: flex;
@@ -34,7 +34,13 @@
 
         .task-status {
           display: flex;
+          max-width: 500px;
           // justify-content: baseline;
+
+          .fas {
+            margin-top: 4px;
+            margin-right: 8px;
+          }
         }
       }
     }
@@ -51,4 +57,8 @@
 .comments {
   padding: 16px;
 }
+
+  .fas {
+    cursor: pointer;
+  }
 }

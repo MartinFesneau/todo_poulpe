@@ -1,7 +1,16 @@
-function addComment(commentHTML) {
-  const commentsCont = document.querySelector('.comments');
-  commentsCont.insertAdjacentHTML('afterbegin', commentHTML);
+var taskId = "<%= @comment.task_id %>"
+var commentSelector = `#task-${taskId} .comments`
+var inputSelector = `#task-${taskId} .form-control`
+
+function addComment(comment) {
+  const commentsCont = document.querySelector(commentSelector);
+  commentsCont.insertAdjacentHTML('beforeend', comment);
+}
+
+function clearInput() {
+const inputField = document.querySelector(inputSelector);
+  inputField.value = ""
 }
 
 addComment('<%= j render "comments/comment", comment: @comment %>');
-
+clearInput();
