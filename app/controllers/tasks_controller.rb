@@ -6,14 +6,9 @@ class TasksController < ApplicationController
   end
 
   def index
-    # @tasks = Task.where(user: current_user).order(priority: :desc)
-    @tasks = policy_scope(Task).order(priority: :asc)
+    # put first tasks not done ordered by priority and deadline
+    @tasks = policy_scope(Task).order(done: :asc, priority: :asc, deadline: :asc, description: :asc)
   end
-
-  # def new
-  #   @task = Task.new
-  #   authorize @task
-  # end
 
   def create
     @task = Task.new(task_params)
@@ -28,28 +23,25 @@ class TasksController < ApplicationController
     end
   end
 
-  
+  # def edit
+  #   authorize @task
+  # end
 
-
-  def edit
-    authorize @task
-  end
-
-  def update
-    authorize @task
-    if @task.update(task_params)
-      respond_to do |format|
-        format.html { redirect_to tasks_path }
-        format.js
-      end
-    else 
-      flash.alert("Content can not be blank")
-      respond_to do |format|
-        format.html { render :edit }
-        format.js
-      end
-    end
-  end
+  # def update
+  #   authorize @task
+  #   if @task.update(task_params)
+  #     respond_to do |format|
+  #       format.html { redirect_to tasks_path }
+  #       format.js
+  #     end
+  #   else 
+  #     flash.alert("Content can not be blank")
+  #     respond_to do |format|
+  #       format.html { render :edit }
+  #       format.js
+  #     end
+  #   end
+  # end
 
   def destroy
     @task.delete

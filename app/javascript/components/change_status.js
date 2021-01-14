@@ -5,11 +5,15 @@ const changeStatus = () => {
   taskCards.forEach((container) => {
     console.log(container)
 
-    const check = container.querySelector(".fa-check-circle");
+    const check = container.querySelector(".fas");
+    console.log(check)
     const csrfToken = document.querySelector("[name='csrf-token']").content;
 
     check.addEventListener("click", () => {
-      check.classList.toggle("done");
+      check.classList.toggle("fa-check-circle")
+      check.classList.toggle("done")
+      check.classList.toggle("fa-times-circle")
+      check.classList.toggle("in-progress")
 
       fetch("/change_task_status", {
         method: "PATCH",

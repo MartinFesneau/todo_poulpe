@@ -1,0 +1,19 @@
+.comment {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $light-gray;
+  border-top: 1px solid $light-gray;
+  padding: 0 8px;
+  background-color: $light-gray;
+  margin-bottom: 8px;
+  
+  .comment-date {
+    display: flex;
+    justify-content: space-between;  
+  }
+
+  p.small {
+    margin-right: 8px;
+    margin-bottom: 0;
+  }
+}

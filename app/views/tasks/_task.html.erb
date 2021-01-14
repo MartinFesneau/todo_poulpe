@@ -1,19 +1,19 @@
 <div class="task-card" id="task-<%= task.id %>" >
   <div class="main-content">
     <div class="cont-left">
-    <div class="task-status">
-      <% if task.done %>
-        <i class="fas fa-check-circle done" data-id="<%= task.id %>"></i>
-      <% else %>
-        <i class="fas fa-check-circle" data-id="<%= task.id %>"></i>
-      <% end %>
-    </div>
-      <p class="strong"><%= task.description %></p>
-      <p>Priority: <%= task.priority %></p>
+      <div class="task-status">
+        <% if task.done %>
+          <i class="fas fa-check-circle done" data-id="<%= task.id %>"></i>
+        <% else %>
+          <i class="fas fa-times-circle in-progress" data-id="<%= task.id %>"></i>
+        <% end %>
+        <p class="strong"><%= task.description %></p>
+      </div>
+      <p class="small">Priority: <%= task.priority %></p>
     </div>
     <div class="cont-right">
       <div class="deadline">
-        <i class="far fa-clock"></i> <span class="small"><%= format_deadline(task.deadline) %></span>
+        <i class="far fa-clock"></i> <span class="small"><%= format_date(task.deadline) %></span>
       </div>
       <div class="actions">
         <div class="comment-icon">
@@ -34,7 +34,11 @@
     </div>
   </div>
   <div class="comments-cont d-none">
+  <hr>
     <div class="comments">
+      <% if task.comments.empty? %>
+        <p class="small">No comments yet</p>
+      <% end %>
       <% task.comments.each do |comment| %>
         <%= render "comments/comment", comment: comment %>
       <% end %>

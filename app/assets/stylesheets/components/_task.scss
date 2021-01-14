@@ -22,6 +22,21 @@
           justify-content: space-evenly;
         }
       }
+
+      .cont-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p.small {
+          margin-bottom: 0;
+        }
+
+        .task-status {
+          display: flex;
+          // justify-content: baseline;
+        }
+      }
     }
 
 
@@ -29,4 +44,11 @@
   color: $green;
 }
 
+.in-progress {
+  color: $red;
+}
+
+.comments {
+  padding: 16px;
+}
 }
