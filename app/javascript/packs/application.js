@@ -27,6 +27,7 @@ import "bootstrap";
 import { showNew } from "../components/show_new_task_form"
 import { showCommentForm } from "../components/show_new_comment_form"
 import { changeStatus } from "../components/change_status"
+import { showHelp } from "../components/show_help"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -37,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   showNew();
   showCommentForm();
   changeStatus();
+  showHelp();
 });

@@ -2,7 +2,14 @@
   <div class="row">
     <div class="col-12 col-md-8">
       <h1>Todo List</h1>
-      <button class="btn btn-primary mb-2" id="new-task-button">
+      <p class="small" id="help-link">Need help ?</p>
+      <div class="help-cont d-none">
+        <p class="small">Click <i class="fas fa-times-circle in-progress"></i> to mark a task as done <i class="fas fa-check-circle done"></i></p>
+        <p class="small">Click <i class="fas fa-comment-alt"></i></i> to show and write comments</p>
+        <p class="small">Click <i class="fas fa-trash"></i></i> to delete a task or a comment</p>
+        
+      </div>
+      <button class="btn btn-primary w-100 mb-2" id="new-task-button">
         Add a new task
       </button>
       <div class="d-none" id="new-task-form">
@@ -13,7 +20,6 @@
     <% @tasks.each do |task| %>
       <%= render "task", task: task %>
     <% end %>
-  
   </div>
   </div>
 </div>

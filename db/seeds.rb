@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-require 'Date'
+require 'date'
 
 puts "Cleaning DB"
 Task.destroy_all
@@ -28,11 +28,28 @@ poulpe2 = User.create(
   password: "mdpmdp"
 )
 
-PRIORITY = [1, 2, 3, 4, 5]
+PRIORITY = [1, 2, 3]
 USERS = User.all
 
 20.times do 
   Task.create(
-    description: Faker::Books::Dune.quote,
-    deadline: 
+    description: Faker::Movie.title,
+    deadline: Date.today + rand(100),
+    priority: PRIORITY.sample,
+    user_id: USERS.sample.id
   )
+end
+
+TASKS = Task.all
+
+40.times do 
+  Comment.create(
+    content: Faker::Movies::StarWars.quote,
+    task_id: TASKS.sample.id
+  )
+end
+
+puts "Seed finished"
+puts "Created #{User.count} users"
+puts "Created #{Task.count} tasks"
+puts "Created #{Comment.count} comments"
