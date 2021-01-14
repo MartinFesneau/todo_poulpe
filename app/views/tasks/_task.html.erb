@@ -9,7 +9,7 @@
         <% end %>
         <p class="strong"><%= task.description %></p>
       </div>
-      <p class="small">Priority: <span class="strong priority-<%= task.priority %>"><%= task.priority %></span></p>
+      <p class="small">Priority: <span class="strong priority-<%= task.priority %>"><%= priority_in_word(task.priority) %></span></p>
     </div>
     <div class="cont-right">
       <div class="deadline">
