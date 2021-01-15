@@ -1,7 +1,7 @@
 function updateTask () {
   var task = document.querySelector(`#task-${"<%= @task.id %>"}`);
-  task.innerHTML = ("")
-  task.innerHTML = ("<%= j render "tasks/task", task: @task %>");
+  task.innerHTML = ""
+  task.innerHTML = "<%= j render "tasks/task", task: @task %>";
   task.classList.remove("card");
 }
 updateTask();

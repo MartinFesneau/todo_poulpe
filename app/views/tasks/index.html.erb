@@ -14,7 +14,7 @@
           <p class="small"><i class="fas fa-sort-down"></i></i> to read comments and add a new one.</p>
           <p class="small m-0"><i class="fas fa-trash"></i></i> to delete a task or a comment.</p>
         </div>
-        <button class="btn btn-primary w-100 mb-2" id="new-task-button">
+        <button class="btn btn-primary w-100 mb-3" id="new-task-button">
           Add a new task
         </button>
         <div class="d-none" id="new-task-form">
@@ -22,7 +22,11 @@
             <%= render "tasks/task_form" %>
           <% end %>
         </div>
-        <p>You have <strong><%= pluralize(tasks_due_today, "task") %></strong> due today.</p>
+        <% if tasks_not_done.zero? %>
+        <p class="body">You don't have any task remaining, congrats!</p>
+        <% else %>
+          <p class="body">You have <strong><%= pluralize(tasks_not_done, "task")%></strong> remaining and <strong><%= pluralize(tasks_due_today, "task") %></strong> due today.</p>
+        <% end %>
         <div class="tasks">
           <% @tasks.each do |task| %>
             <%= render "task", task: task %>

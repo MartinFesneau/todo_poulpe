@@ -20,7 +20,7 @@ class TasksController < ApplicationController
     else
       respond_to do |format|
         format.html { render :new }
-        format.js { render :task_error }
+        format.js { render :task_error_create }
       end
     end
   end
