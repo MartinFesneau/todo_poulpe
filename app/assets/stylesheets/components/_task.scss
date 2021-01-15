@@ -12,11 +12,7 @@
         
         .actions {
           display: flex;
-          justify-content: flex-end;
-          
-          .fa-trash {
-            margin-right: 16px;
-          }
+          justify-content: space-between;
         }
       }
 
@@ -59,15 +55,15 @@
 }
 
 .main-content {
-  .fa-trash {
+  .fa-trash, .fa-pen {
     opacity: 0;
     color: black;
   }
-  &:hover .fa-trash {
+  &:hover .fa-trash, &:hover .fa-pen {
     opacity: 0.2;
   }
 
-  .fa-trash:hover {
+  .fa-trash:hover, .fa-pen:hover {
     opacity: 0.6;
   }
 }

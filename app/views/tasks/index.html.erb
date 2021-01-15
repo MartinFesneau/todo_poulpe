@@ -2,30 +2,34 @@
   <div class="row">
     <div class="col-12 col-md-8 col-centered">
       <div class="content">
-      <h1 class="title mt-2">ToPoulpe List</h1>
-      <p class="small" id="help-link">Need help ?</p>
-      <div class="help-cont d-none card">
-        <div class="d-flex justify-content-between">
-          <p class="small">Click <i class="fas fa-times-circle in-progress"></i> to mark a task as done <i class="fas fa-check-circle done"></i>.</p>
+        <h1 class="title mt-2">ToPoulpe List</h1>
+        <p class="small" id="help-link">Need help ?</p>
+        <div class="help-cont d-none card">
+          <div class="d-flex justify-content-between">
+          <p class="small">Click: </p>
+          <p class="small"><i class="fas fa-times-circle in-progress"></i> to mark a task as done <i class="fas fa-check-circle done"></i>.</p>
           <i class="fas fa-times"></i>
+          </div>
+          <p class="small"><i class="fas fa-pen"></i> to edit a task.</p>
+          <p class="small"><i class="fas fa-sort-down"></i></i> to read comments and add a new one.</p>
+          <p class="small m-0"><i class="fas fa-trash"></i></i> to delete a task or a comment.</p>
         </div>
-        <p class="small">Click <i class="fas fa-sort-down"></i></i> to read comments and add a new one.</p>
-        <p class="small m-0">Click <i class="fas fa-trash"></i></i> to delete a task or a comment.</p>
+        <button class="btn btn-primary w-100 mb-2" id="new-task-button">
+          Add a new task
+        </button>
+        <div class="d-none" id="new-task-form">
+          <% if policy(Task).create? %>
+            <%= render "tasks/task_form" %>
+          <% end %>
+        </div>
+        <p>You have <strong><%= pluralize(tasks_due_today, "task") %></strong> due today.</p>
+        <div class="tasks">
+          <% @tasks.each do |task| %>
+            <%= render "task", task: task %>
+          <% end %>
+        </div>
       </div>
-      <button class="btn btn-primary w-100 mb-2" id="new-task-button">
-        Add a new task
-      </button>
-      <div class="d-none" id="new-task-form">
-        <% if policy(Task).create? %>
-          <%= render "tasks/task_form"  %>
-        <% end %>
-      </div>
-      <p>You have <strong><%= pluralize(tasks_due_today, "task") %></strong> due today.</p>
-    <% @tasks.each do |task| %>
-      <%= render "task", task: task %>
-    <% end %>
-      </div>
-  </div>
+    </div>
   </div>
 </div>
 

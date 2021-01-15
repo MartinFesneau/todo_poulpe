@@ -1,0 +1,19 @@
+<div class="form-group card">
+  <i class="fas fa-times text-right"></i>
+  <%= simple_form_for(task, remote: true) do |f| %>
+  <div class="">
+    <%= f.input :description, label: "Task description", class:"form-control" %>
+  </div>
+    <div class="form-row d-flex justify-content-between">
+      <div class="col-auto">
+        <%= f.input :deadline, label: "Deadline", as: :date, html5: true, class:"form-control" %>
+      </div>
+      <div class="col-auto">
+        <%= f.input :priority, as: :radio_buttons, collection: [["High", 1 ] , ["Medium", 2], ["Low", 3]], class:"form-control", wrapper: :vertical_collection_inline %>
+      </div>
+      <div class="col-auto mt-3 ml-4">
+        <%= f.submit "Update", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

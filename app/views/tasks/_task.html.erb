@@ -16,6 +16,9 @@
         <i class="far fa-clock "></i> <span class="small <%= "priority-1" if task.deadline <= Date.today %> "><%= format_date(task.deadline) %></span>
       </div>
       <div class="actions">
+        <div class="edit">
+          <i class="fas fa-pen"></i>
+        </div>
         <div class="delete">
         <%= link_to task_path(task),
                   method: :delete,
@@ -29,6 +32,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="edit-form d-none">
+    <%= render "tasks/edit_task_form", task: task %>
   </div>
   <div class="comments-cont d-none card">
     <div class="comments">
