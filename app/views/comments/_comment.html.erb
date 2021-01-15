@@ -2,9 +2,10 @@
   <p class="small"><%= comment.content %></p>
   <div class="comment-details">
     <% if comment.comment_file.attached? %>
-      <%= link_to url_for(comment.comment_file), target: "_blank"  do %>
-        <i class="fas fa-file-alt"></i>
-      <% end %>
+      <%= link_to url_for(comment.comment_file), 
+                  target: "_blank"  do %>
+                    <i class="fas fa-file-alt"></i>
+                  <% end %>
     <% end %>
     <div class="comment-date">
       <p class="small"><%= format_date(comment.created_at) %></p>
