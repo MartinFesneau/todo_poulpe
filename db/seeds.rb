@@ -35,7 +35,7 @@ STATUS = [true, false]
 30.times do 
   Task.create(
     description: Faker::Movie.title,
-    deadline: Date.today + rand(30),
+    deadline: Date.today + (0..30).sample,
     priority: PRIORITY.sample,
     user_id: USERS.sample.id,
     done: STATUS.sample
