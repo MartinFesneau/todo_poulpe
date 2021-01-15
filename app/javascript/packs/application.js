@@ -29,7 +29,6 @@ import { changeStatus } from "../components/change_status"
 import { showHelp } from "../components/show_help"
 import { expandCard } from "../components/expand_card"
 import { showEditForm } from "../components/show_task_edit_form"
-
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 

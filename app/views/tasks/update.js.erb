@@ -4,4 +4,34 @@ function updateTask () {
   task.innerHTML = "<%= j render "tasks/task", task: @task %>";
   task.classList.remove("card");
 }
+
+<%# can not call the js function expandCard to set the eventListener so I have to redo the function here.
+I am looking for a better solution as it is not very DRY :)  %>
+const expandCard = () => {
+  const taskCard = document.querySelector(".task-card .card");
+  console.log(taskCard);
+  const arrowDown = taskCard.querySelector(".fa-sort-down");
+  const commentCont = taskCard.querySelector(".comments-cont");
+  
+  arrowDown.addEventListener("click", () => {
+    commentCont.classList.toggle("d-none");
+    arrowDown.classList.toggle("rotate");
+
+    <%# // remove error message when form is closed %>
+    const errorMessage = document.querySelector(".error-message");
+    const comments = document.querySelector(".comments")
+    if (errorMessage) {
+      errorMessage.remove();
+    }
+    <%# // remove error message when a comment is submited %>
+    comments.addEventListener('DOMNodeInserted', () => {
+      const errorMessage = document.querySelector(".error-message");
+      if (errorMessage) {
+        errorMessage.remove();
+      }
+    })
+  });
+};
+
 updateTask();
+expandCard();
