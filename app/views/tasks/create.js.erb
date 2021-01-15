@@ -1,6 +1,11 @@
 <%#= insert error message if an input is missing %>
-var errorMessage = '<p class="strong error-message">One or more input are missing.</p>'
+var errorMessageExist = document.querySelector(".error-message")
 
-var formCont = document.querySelector("#new-task-form .card")
+if (!errorMessageExist) {
 
-formCont.insertAdjacentHTML("beforeend", errorMessage);
+  var errorMessage = '<p class="strong error-message">One or more input are missing.</p>'
+
+  var formCont = document.querySelector("#new-task-form .card")
+
+  formCont.insertAdjacentHTML("beforeend", errorMessage);
+}

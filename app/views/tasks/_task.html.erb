@@ -16,9 +16,6 @@
         <i class="far fa-clock "></i> <span class="small <%= "priority-1" if task.deadline <= Date.today %> "><%= format_date(task.deadline) %></span>
       </div>
       <div class="actions">
-        <div class="comment-icon">
-          <i class="fas fa-comment-alt"></i> <%= task.comments.size %>
-        </div>
         <div class="delete">
         <%= link_to task_path(task),
                   method: :delete,
@@ -26,6 +23,9 @@
                   :data => { :confirm => "Are you sure you want to delete the task '#{task.description}' ?" } do %>
                     <i class="fas fa-trash"></i>
                   <% end %>
+        </div>
+        <div class="comment-icon">
+          <i class="fas fa-comment-alt"></i> <%= task.comments.size %>
         </div>
       </div>
     </div>
