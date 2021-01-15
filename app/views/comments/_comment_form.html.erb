@@ -1,5 +1,5 @@
 <div>
-  <%= simple_form_for([task, comment], remote: true, html: { class: "form-group"}) do |f| %>
+  <%= simple_form_for([task, comment], remote: true, html: { class: "form-group mb-0"}) do |f| %>
     <%= f.input :content, class:"form-group", label: false, placeholder: "Add a new comment" %>
     <div class="custom-file">
       <%= f.input :file, class: "custom-file-input", label: false %>

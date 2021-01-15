@@ -16,4 +16,16 @@
     margin-right: 8px;
     margin-bottom: 0;
   }
+  
+  .fa-trash {
+    opacity: 0;
+    color: black;
+  }
+  &:hover .fa-trash {
+    opacity: 0.2;
+  }
+
+  .fa-trash:hover {
+    opacity: 0.6;
+  }
 }
