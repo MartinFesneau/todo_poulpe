@@ -6,7 +6,9 @@ var noCommentSelector = `#task-${taskId} .no-comment`;
 function addComment(comment) {
   <%# delete "no comment yet"  %>
   const noComment = document.querySelector(noCommentSelector);
-  noComment.classList.add("d-none");
+  if (noComment) {
+    noComment.classList.add("d-none");
+  }
 
   <%# add the comment after the existing comments  %>
   const commentsCont = document.querySelector(commentSelector);

@@ -15,12 +15,12 @@
       <button class="btn btn-primary w-100 mb-2" id="new-task-button">
         Add a new task
       </button>
-      <p>You have <strong><%= pluralize(tasks_due_today, "task") %></strong> due today.</p>
       <div class="d-none" id="new-task-form">
         <% if policy(Task).create? %>
-          <%= render "shared/task_form"  %>
+          <%= render "tasks/task_form"  %>
         <% end %>
       </div>
+      <p>You have <strong><%= pluralize(tasks_due_today, "task") %></strong> due today.</p>
     <% @tasks.each do |task| %>
       <%= render "task", task: task %>
     <% end %>
