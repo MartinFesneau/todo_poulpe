@@ -18,8 +18,8 @@ martin = User.create(
   password: "mdpmdp"
 )
 
-poulpe1 = User.create(
-  email: "poulpe1@test.com",
+poulpe = User.create(
+  email: "poulpe@test.com",
   password: "mdpmdp"
 )
 
@@ -31,10 +31,10 @@ poulpe2 = User.create(
 PRIORITY = [1, 2, 3]
 USERS = User.all
 
-20.times do 
+30.times do 
   Task.create(
     description: Faker::Movie.title,
-    deadline: Date.today + rand(100),
+    deadline: Date.today + rand(30),
     priority: PRIORITY.sample,
     user_id: USERS.sample.id
   )

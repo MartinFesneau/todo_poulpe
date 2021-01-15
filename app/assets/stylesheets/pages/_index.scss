@@ -29,3 +29,24 @@ h1.title {
   color: $red;
   margin-bottom: 0;
 }
+
+@media(max-width: 500px) {
+  .comment-date p {
+    display: none;
+  }
+
+  .main-content {
+    .fa-trash, .fa-pen {
+      opacity: 0.2;
+    }
+  }
+  .comment {
+    .fa-trash {
+      opacity: 0.2;
+    }
+  }
+
+  .deadline {
+    font-size: 12px;
+  }
+}
