@@ -32,6 +32,21 @@ function expandCard () {
     })
   });
 };
+<%# same for this function to show/hide the edit form  %>
+function showEditForm () {
+  const card = document.querySelector(".task-card .card");
+
+  const editButton = card.querySelector(".fa-pen");
+  const editCont = card.querySelector(".edit-form");
+  const closeButton = card.querySelector(".fa-times")
+  editButton.addEventListener("click", () => {
+    editCont.classList.toggle("d-none");
+  });
+  closeButton.addEventListener("click", () => {
+    editCont.classList.toggle("d-none");
+  })
+};
 
 updateTask();
 expandCard();
+showEditForm();
