@@ -25,5 +25,5 @@ const expandCard = () => {
     });
   });
 };
-global.expandCard = expandCard;
+
 export { expandCard };
