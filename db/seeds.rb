@@ -30,13 +30,15 @@ poulpe2 = User.create(
 
 PRIORITY = [1, 2, 3]
 USERS = User.all
+STATUS = [true, false]
 
 30.times do 
   Task.create(
     description: Faker::Movie.title,
     deadline: Date.today + rand(30),
     priority: PRIORITY.sample,
-    user_id: USERS.sample.id
+    user_id: USERS.sample.id,
+    done: STATUS.sample
   )
 end
 
