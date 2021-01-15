@@ -1,0 +1,6 @@
+<%#= insert error message if an input is missing %>
+var errorMessage = '<p class="strong error-message">Content can not be blank.</p></p>'
+
+var formCont = document.querySelector(".comments-form")
+
+formCont.insertAdjacentHTML("beforeend", errorMessage);

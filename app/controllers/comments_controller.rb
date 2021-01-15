@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     else
       respond_to do |format|
         format.html { render :new }
-        format.js
+        format.js { render :comment_error}
       end
     end
   end
