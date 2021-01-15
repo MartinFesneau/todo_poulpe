@@ -41,7 +41,7 @@
     <% if task.comments.empty? %>
       <p class="small no-comment">No comment yet</p>
     <% end %>
-      <% task.comments.each do |comment| %>
+      <% order_comments(task.comments).each do |comment| %>
         <% if policy(Comment).create?  %>
           <%= render "comments/comment", comment: comment %>
         <% end %>

@@ -22,4 +22,8 @@ module TaskHelper
   def tasks_not_done
     return Task.where(done: false, user: current_user).size
   end
+
+  def order_comments(array)
+    return array.sort_by{ |element| element.created_at }
+  end
 end

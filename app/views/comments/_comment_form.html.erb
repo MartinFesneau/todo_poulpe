@@ -2,7 +2,7 @@
   <%= simple_form_for([task, comment], remote: true, html: { class: "form-group mb-0"}) do |f| %>
     <%= f.input :content, class:"form-group", label: false, placeholder: "Add a new comment" %>
     <div class="custom-file">
-      <%= f.input :file, class: "custom-file-input", label: false %>
+      <%= f.input :comment_file, as: :file, class: "custom-file-input", label: false %>
     </div>
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>

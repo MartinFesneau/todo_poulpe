@@ -1,6 +1,6 @@
 var taskId = "<%= @comment.task_id %>";
 var commentSelector = `#task-${taskId} .comments`;
-var inputSelector = `#task-${taskId} .form-control`;
+var inputSelector = `#task-${taskId} #comment_content`;
 var noCommentSelector = `#task-${taskId} .no-comment`;
 
 function addComment(comment) {

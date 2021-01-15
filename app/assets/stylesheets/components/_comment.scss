@@ -8,6 +8,7 @@
   margin-bottom: 8px;
   
   .comment-date {
+    margin-left: 16px;
     display: flex;
     justify-content: space-between;  
   }
@@ -27,5 +28,18 @@
 
   .fa-trash:hover {
     opacity: 0.6;
+  }
+
+  .comment-details {
+    display: flex;
+    
+    .fa-file-alt {
+      color: $poulpe;
+      opacity: 0.8;
+    
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }

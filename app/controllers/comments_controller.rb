@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     @comment = Comment.create(comment_params)
     @comment.task = Task.find(params[:task_id])
     authorize @comment
+    puts @comment.comment_file
     if @comment.save
       respond_to do |format|
         format.html { redirect_to tasks_path(@comment.task_id) }
@@ -35,6 +36,6 @@ class CommentsController < ApplicationController
   private 
 
   def comment_params
-    params.require(:comment).permit(:id, :content, :task_id)
+    params.require(:comment).permit(:id, :content, :task_id, :comment_file)
   end
 end
