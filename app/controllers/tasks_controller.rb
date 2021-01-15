@@ -18,8 +18,10 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to tasks_path
     else
-      flash.alert("Content can not be blank")
-      redirect_to tasks_path
+      respond_to do |format|
+        format.html { render :new }
+        format.js
+      end
     end
   end
 
