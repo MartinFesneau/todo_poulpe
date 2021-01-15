@@ -1,14 +1,22 @@
-var taskId = "<%= @comment.task_id %>"
-var commentSelector = `#task-${taskId} .comments`
+var taskId = "<%= @comment.task_id %>";
+var commentSelector = `#task-${taskId} .comments`;
+var inputSelector = `#task-${taskId} .form-control`;
+var noCommentSelector = `#task-${taskId} .no-comment`;
 
 function addComment(comment) {
+  <%# delete "no comment yet"  %>
+  const noComment = document.querySelector(noCommentSelector);
+  noComment.classList.add("d-none");
+
+  <%# add the comment after the existing comments  %>
   const commentsCont = document.querySelector(commentSelector);
   commentsCont.insertAdjacentHTML('beforeend', comment);
 }
 
+<%# clear the input form  %>
 function clearInput() {
 const inputField = document.querySelector(inputSelector);
-  inputField.value = ""
+  inputField.value = "";
 }
 
 addComment('<%= j render "comments/comment", comment: @comment %>');

@@ -33,6 +33,9 @@
   <div class="comments-cont d-none">
   <hr>
     <div class="comments">
+    <% if task.comments.empty? %>
+      <p class="small no-comment">No comment yet</p>
+    <% end %>
       <% task.comments.each do |comment| %>
         <%= render "comments/comment", comment: comment %>
       <% end %>
