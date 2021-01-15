@@ -38,24 +38,37 @@
       }
     }
 
-.comments {
-  padding: 16px;
+  .comments {
+    padding: 16px;
+  }
+    .priority-1 {
+      color: $red;
+    }
+
+    .priority-2 {
+      color: $yellow;
+    }
+
+    .priority-3 {
+      color: $green;
+    }
+
+    .fa-trash, .fa-times-circle, .fa-check-circle, .fa-sort-down {
+      cursor: pointer;
+    }
 }
 
-  .fas {
-    cursor: pointer;
+.task-card {
+  .fa-trash {
+    opacity: 0;
+    color: black;
+  }
+  &:hover .fa-trash {
+    opacity: 0.2;
   }
 
-  .priority-1 {
-    color: $red;
-  }
-
-  .priority-2 {
-    color: $yellow;
-  }
-
-  .priority-3 {
-    color: $green;
+  .fa-trash:hover {
+    opacity: 0.6;
   }
 }
 
