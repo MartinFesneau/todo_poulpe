@@ -39,7 +39,7 @@ class TasksController < ApplicationController
     else 
       respond_to do |format|
         format.html { render :edit }
-        format.js { render :task_error}
+        format.js { render :task_error_update }
       end
     end
   end

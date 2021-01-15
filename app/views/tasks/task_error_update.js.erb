@@ -1,0 +1,8 @@
+<%#= insert error message if an input is missing %>
+var errorMessageExist = document.querySelector(".error-message");
+
+if (!errorMessageExist) {
+  var errorMessage = '<p class="strong error-message">One or more input are missing.</p>';
+  var formCont = document.querySelector(".edit-form");
+  formCont.insertAdjacentHTML("beforeend", errorMessage);
+}
