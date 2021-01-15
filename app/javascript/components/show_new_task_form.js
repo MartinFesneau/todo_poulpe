@@ -12,7 +12,7 @@ const showNew = () => {
       const errorMessage = document.querySelector(".error-message");
       newForm.classList.toggle("d-none");
       if (errorMessage) {
-        console.log(errorMessage)
+        // remove the error message when the form is closed
         errorMessage.remove();
       }
     });
