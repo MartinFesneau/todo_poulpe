@@ -1,6 +1,6 @@
 const expandCard = () => {
   const taskCards = document.querySelectorAll(".task-card");
-
+  
   taskCards.forEach((card) => {
     const arrowDown = card.querySelector(".fa-sort-down");
     const commentCont = card.querySelector(".comments-cont");
@@ -25,5 +25,5 @@ const expandCard = () => {
     });
   });
 };
-
+global.expandCard = expandCard;
 export { expandCard };

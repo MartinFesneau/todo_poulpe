@@ -2,51 +2,9 @@ function updateTask () {
   var task = document.querySelector(`#task-${"<%= @task.id %>"}`);
   task.innerHTML = ""
   task.innerHTML = "<%= j render "tasks/task", task: @task %>";
-  task.classList.remove("card");
 }
 
-<%# can not call the js function expandCard to set the eventListener so I have to redo the function here.
-I am looking for a better solution as it is not very DRY :)  %>
-function expandCard () {
-  const taskCard = document.querySelector(".task-card .card");
-  console.log(taskCard);
-  const arrowDown = taskCard.querySelector(".fa-sort-down");
-  const commentCont = taskCard.querySelector(".comments-cont");
-  
-  arrowDown.addEventListener("click", () => {
-    commentCont.classList.toggle("d-none");
-    arrowDown.classList.toggle("rotate");
-
-    <%# // remove error message when form is closed %>
-    const errorMessage = document.querySelector(".error-message");
-    const comments = document.querySelector(".comments")
-    if (errorMessage) {
-      errorMessage.remove();
-    }
-    <%# // remove error message when a comment is submited %>
-    comments.addEventListener('DOMNodeInserted', () => {
-      const errorMessage = document.querySelector(".error-message");
-      if (errorMessage) {
-        errorMessage.remove();
-      }
-    })
-  });
-};
-<%# same for this function to show/hide the edit form  %>
-function showEditForm () {
-  const card = document.querySelector(".task-card .card");
-
-  const editButton = card.querySelector(".fa-pen");
-  const editCont = card.querySelector(".edit-form");
-  const closeButton = card.querySelector(".fa-times")
-  editButton.addEventListener("click", () => {
-    editCont.classList.toggle("d-none");
-  });
-  closeButton.addEventListener("click", () => {
-    editCont.classList.toggle("d-none");
-  })
-};
-
 updateTask();
+<%# call those global function to set up the event listeners on the edited task %>
 expandCard();
 showEditForm();

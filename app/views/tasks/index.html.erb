@@ -30,7 +30,9 @@
         <% end %>
         <div class="tasks">
           <% @tasks.each do |task| %>
+          <div class="task-card card" id="task-<%= task.id %>" >
             <%= render "task", task: task %>
+          </div>
           <% end %>
         </div>
       </div>

@@ -13,5 +13,5 @@ const showEditForm = () => {
     })
   });
 };
-
+global.showEditForm = showEditForm;
 export { showEditForm };
