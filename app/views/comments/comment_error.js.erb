@@ -1,8 +1,11 @@
 <%#= insert error message if an input is missing %>
-var errorMessageExist = document.querySelector(".error-message");
+var taskId = "<%= @comment.task_id %>";
+var commentSelector = `#task-${taskId} .comments-cont`;
+var errorMessageSelector = `#task-${taskId} .error-message`;
+var errorMessageExist = document.querySelector("errorMessageSelector");
 
 if (!errorMessageExist) {
-  var errorMessage = '<p class="strong error-message">Content can not be blank.</p></p>';
-  var formCont = document.querySelector(".comments-form");
+  const errorMessage = '<p class="strong error-message mt-2">Content can not be blank.</p>';
+  var formCont = document.querySelector(commentSelector);
   formCont.insertAdjacentHTML("beforeend", errorMessage);
 }
