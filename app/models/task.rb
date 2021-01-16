@@ -4,4 +4,12 @@ class Task < ApplicationRecord
   validates :description, presence: true
   validates :deadline, presence: true
   validates :priority, presence: true
+
+  # include PgSearch::Model 
+
+  # pg_search_scope :filter_by_priority,
+  # against: [ :priority ],
+  # using: {
+  #   tsearch: { prefix: true }
+  # }
 end
