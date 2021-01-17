@@ -2,7 +2,7 @@
 var taskId = "<%= @comment.task_id %>";
 var commentSelector = `#task-${taskId} .comments-cont`;
 var errorMessageSelector = `#task-${taskId} .error-message`;
-var errorMessageExist = document.querySelector("errorMessageSelector");
+var errorMessageExist = document.querySelector(errorMessageSelector);
 
 if (!errorMessageExist) {
   const errorMessage = '<p class="strong error-message mt-2">Content can not be blank.</p>';
