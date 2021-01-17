@@ -6,11 +6,7 @@ class TasksController < ApplicationController
   end
 
   def index
-    # put first tasks not done ordered by priority and deadline
     @tasks = policy_scope(Task).order(done: :asc, priority: :asc, deadline: :asc, updated_at: :desc)
-    # if params["search"]["priority"]
-    #   @filtered_task = params["search"]
-    # end
   end
 
   def create
